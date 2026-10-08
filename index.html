@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نتيجة كيدز ماث</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ صفحة الدخول ============ -->
+<section id="login" class="view active">
+  <i class="fa-solid fa-graduation-cap deco" style="top:30px;left:5%;transform:rotate(12deg)"></i>
+  <i class="fa-solid fa-book-open deco" style="top:170px;right:6%;font-size:70px"></i>
+  <i class="fa-solid fa-book deco" style="bottom:90px;right:3%"></i>
+  <div class="login-card">
+    <img src="c:\Users\ECC\Desktop\Kadis Math\kids.png" alt="" width="130px">
+    <h1>كشف النتيجة</h1>
+    <p class="sub">ادخل بياناتك لمشاهدة نتيجتك</p>
+    <div class="field"><i class="fa-solid fa-user"></i><input id="lName" placeholder="اسم الطالب" autocomplete="off"></div>
+    <div class="field"><i class="fa-solid fa-lock"></i><input id="lPass" type="password" placeholder="الرقم السري"></div>
+    <div class="err" id="lErr"></div>
+    <button class="btn btn-blue" id="lBtn">عرض النتيجة <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+    <div class="note">صفحة مخصصة للطلاب فقط <i class="fa-solid fa-lock"></i></div>
+  </div>
+</section>
+
+<!-- ============ صفحة النتيجة ============ -->
+<section id="result" class="view">
+  <div class="top">
+    <i class="fa-solid fa-graduation-cap cap"></i>
+    <a id="backHome">العودة للرئيسية <i class="fa-solid fa-house"></i></a>
+  </div>
+  <div class="res-wrap">
+    <div class="res-card">
+      <div class="confetti">
+        <i style="top:30px;right:22%;background:#1d4ed8;transform:rotate(-30deg)"></i>
+        <i style="top:20px;left:15%;background:#2563eb;transform:rotate(30deg)"></i>
+        <i style="top:62px;left:8%;background:#f59e0b;transform:rotate(50deg)"></i>
+        <i style="top:80px;right:15%;background:#16a34a"></i>
+      </div>
+      <img src="c:\Users\ECC\Desktop\Kadis Math\kids.png" alt="" width="130px">
+      <h2>النتيجة</h2>
+      <div class="lbl"><span>اسم الطالب</span><i class="fa-solid fa-user"></i></div>
+      <div class="box" id="rName"></div>
+      <div class="lbl" style="margin-top:34px"><span>النتيجة النهائية</span><i class="fa-solid fa-chart-column"></i></div>
+      <div class="pct" id="rScore"></div>
+      <div class="lbl" style="margin-top:34px"><span>التقدير</span><i class="fa-solid fa-star"></i></div>
+      <div class="grade"><span id="rGrade"></span></div>
+      <button class="btn btn-dark" id="logout">تسجيل خروج <i class="fa-solid fa-rotate"></i></button>
+    </div>
+    <div class="res-foot">— بالتوفيق دائماً —</div>
+  </div>
+</section>
+
+<!-- ============ لوحة التحكم ============ -->
+<section id="admin" class="view">
+  <div class="layout">
+    <aside class="side">
+      <div class="user"><div class="avatar"><i class="fa-solid fa-user"></i></div><div><b>Admin</b><small>مدير النظام</small></div></div>
+      <nav class="nav">
+        <a class="on" data-go="top"><i class="fa-solid fa-house"></i>لوحة التحكم</a>
+        <a data-go="form"><i class="fa-solid fa-square-plus"></i>إضافة طالب</a>
+        <a data-go="list"><i class="fa-solid fa-users"></i>قائمة الطلاب</a>
+        <a data-go="search"><i class="fa-solid fa-magnifying-glass"></i>البحث عن طالب</a>
+        <a data-go="top"><i class="fa-solid fa-gear"></i>الإعدادات</a>
+      </nav>
+      <div class="slogan"><i class="fa-solid fa-graduation-cap"></i>معاً نحو<br>مستقبل أفضل<hr></div>
+    </aside>
+    <div class="main">
+      <div class="bar"><a id="aLogout"><i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج</a></div>
+      <div class="content" id="top">
+        <div class="hero">
+          <div class="ic"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div><h2>لوحة تحكم النتائج</h2><p>أضف الطلاب، وادخل النتائج، واطلع على جميع البيانات بسهولة</p></div>
+        </div>
+
+        <div class="card" id="form">
+          <h3><i class="fa-solid fa-user-plus"></i> إضافة / تعديل نتيجة طالب</h3>
+          <div class="row">
+            <div><label>اسم الطالب</label><div class="fi"><span><i class="fa-regular fa-user"></i></span><input id="fName" placeholder="ادخل اسم الطالب"></div></div>
+            <div><label>الرقم السري</label><div class="fi"><span><i class="fa-solid fa-lock"></i></span><input id="fPass" placeholder="ادخل الرقم السري"></div></div>
+          </div>
+          <div style="margin-top:28px"><label>النتيجة</label><div class="fi"><span><i class="fa-solid fa-chart-column"></i></span><input id="fScore" type="number" min="0" max="100" placeholder="ادخل النتيجة (مثال: 95)"></div></div>
+          <div class="actions">
+            <button class="btn b-add" id="bAdd"><i class="fa-solid fa-plus"></i> إضافة النتيجة</button>
+            <button class="btn b-up" id="bUp"><i class="fa-solid fa-rotate"></i> تحديث</button>
+            <button class="btn b-can" id="bCan"><i class="fa-solid fa-xmark"></i> إلغاء</button>
+          </div>
+        </div>
+
+        <div class="card" id="search"><div class="fi"><span style="order:2;border:0;border-right:1px solid var(--line)"><i class="fa-solid fa-magnifying-glass"></i></span><input id="q" placeholder="ابحث عن طالب بالاسم..."></div></div>
+
+        <div class="card" id="list">
+          <h3><i class="fa-solid fa-users"></i> قائمة الطلاب</h3>
+          <div class="tw"><table>
+            <thead><tr><th>#</th><th>اسم الطالب</th><th>الرقم السري</th><th>النتيجة</th><th>التقدير</th><th>الإجراءات</th></tr></thead>
+            <tbody id="tb"></tbody>
+          </table></div>
+          <div class="total">عدد الطلاب الكلي: <span id="cnt">0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
